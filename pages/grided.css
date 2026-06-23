@@ -80,6 +80,7 @@ ul {
   background-color: white;
   place-items: center;
   padding: 50px;
+  width: 100%;
 }
 
 .article {
