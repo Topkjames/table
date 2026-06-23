@@ -1,0 +1,128 @@
+/* 
+The container element has two columns
+The container's second column is 4 times as large as the first column
+The container element has a gap of 4px
+The header element has two columns
+The ul inside the menu element contains another grid
+The ul inside the nav element contains another grid
+The sidebar element has a gap of 50px
+The text elements in the sidebar are centered with grid
+The article element should set grid columns using repeat along with the auto-fit and minmax properties
+The article columns should have a minimum value of 250px and a maximum of 1fr unit
+The article element has a gap of 15px
+The card elements inside the article container have a height of 200px
+The header and footer span across both columns
+The sidebar only spans across the first column
+The nav and article elements only span across the second column
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-size: 0.75rem;
+  color: #111;
+}
+
+header {
+  background-color: #393f4d;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  padding: 10px;
+  grid-column: 1/3;
+}
+.header-logo {
+  display: grid;
+  font-size: 1.2rem;
+  font-weight: bold;
+  place-items: center;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  gap: 5px;
+  list-style: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 4px;
+}
+
+.sidebar {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 50px;
+  place-items: center;
+  text-align: center;
+  background-color: #c50208;
+  padding: 5px;
+}
+
+.sidebar div {
+  background-color: white;
+  place-items: center;
+  padding: 50px;
+}
+
+.article {
+  display: grid;
+  grid-template-rows: 50px 1fr;
+}
+
+.top-article {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #c50208;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  place-items: center;
+}
+
+.main-article {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  background-color: #bccbde;
+  padding: 15px;
+}
+
+.card {
+  background-color: white;
+  height: 200px;
+  padding: 20px;
+}
+
+.card p:first-child {
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+footer {
+  display: grid;
+  grid-column: 1/3;
+  place-items: center;
+  padding: 10px;
+  background-color: #393f4d;
+  color: white;
+  font-size: 0.85rem;
+}

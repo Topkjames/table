@@ -1,0 +1,96 @@
+/* Self Check
+
+The gap is 15px
+The grid has two columns
+The grid has four rows
+The grid tracks do not use static sizes (no pixels!)
+The second column is three times as large as the other
+The third row is five times as large as the others
+The columns narrow and widen as the viewport changes size
+Row 3 gets taller to accommodate text wrapping as you narrow the viewport size
+*/
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-size: 1rem;
+  color: white;
+  padding: 10px;
+  background: linear-gradient(120deg, #f2fdfd, #cafaf8);
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr minmax(200px, 3fr);
+  grid-template-rows: 1fr 1fr 5fr 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar nav"
+    "sidebar article"
+    "footer footer";
+  gap: 15px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.container > div,
+.article h2 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+div p {
+  font-size: 1rem;
+  text-align: left;
+  font-weight: normal;
+}
+
+.header {
+  grid-area: header;
+  background-color: #006157;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #005b94;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.nav {
+  grid-area: nav;
+  background-color: #642cde;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.article {
+  grid-area: article;
+  background-color: #7e1dc3;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #393f4d;
+  padding: 15px;
+  border-radius: 5px;
+}
