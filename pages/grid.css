@@ -31,7 +31,6 @@ body {
 
 .container {
   width: 100%;
-  max-width: 960px;
   background-color: white;
   display: grid;
   grid-template-columns: 1fr minmax(200px, 3fr);
